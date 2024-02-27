@@ -60,7 +60,7 @@ export default Gameboard = ({ navigation, route }) => {
             name={board[dice]}
             key={"dice" + dice}
             size={50}
-          color={getDiceColor(index)}
+          color={getDiceColor(dice)}
           >
           </MaterialCommunityIcons>
         </Pressable>
