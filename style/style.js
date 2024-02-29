@@ -6,7 +6,7 @@ export default StyleSheet.create({
     backgroundColor: '#fff'
   },
   header: {
-    marginTop: 30,
+    margin: 'auto',
     marginBottom: 15,
     backgroundColor: '#d5ffb3',
     flexDirection: 'row',
@@ -14,12 +14,10 @@ export default StyleSheet.create({
   },
   footer: {
     color: '#fae6cf',
-    marginTop: 20,
+    marginTop: 'auto',
     backgroundColor: '#d5ffb3',
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    flex: 1
+
 
   },
   title: {
@@ -118,6 +116,10 @@ export default StyleSheet.create({
     backgroundColor: '#d5ffb3',
     textAlign: 'center',
     width: '50%',
+  },
+  centerPadding: {
+    alignItems: 'center',
+    padding: 10,
   },
   }
 

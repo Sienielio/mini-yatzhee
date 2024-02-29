@@ -62,7 +62,7 @@ export default Home = ({ navigation }) => {
                         </Text>
                         <Text
                             multiline='true'
-                            style={styles.center}>
+                            style={styles.centerPadding}>
                             THE GAME: Upper section of the classic Yahtzee
                             dice game. You have {NBR_OF_DICES} dices and
                             for the every dice you have {NBR_OF_THROWS}
@@ -75,7 +75,7 @@ export default Home = ({ navigation }) => {
                         </Text>
                         <Text
                             multiline='true'
-                            style={styles.center}
+                            style={styles.centerPadding}
                             >POINTS: After each turn game calculates the sum
                             for the dices you selected. Only the dices having
                             the same spot count are calculated. Inside the
