@@ -71,12 +71,9 @@ export default Home = ({ navigation }) => {
                             possible. In the end of the turn you must select
                             your points from {MIN_SPOT} to {MAX_SPOT}.
                             Game ends when all points have been selected.
-                            The order for selecting those is free.
-                        </Text>
-                        <Text
-                            multiline='true'
-                            style={styles.centerPadding}
-                            >POINTS: After each turn game calculates the sum
+                            The order for selecting those is free. 
+                            {"\n"}{"\n"}
+                            POINTS: After each turn game calculates the sum
                             for the dices you selected. Only the dices having
                             the same spot count are calculated. Inside the
                             game you can not select same points from
@@ -84,8 +81,9 @@ export default Home = ({ navigation }) => {
                             GOAL: To get points as much as possible.
                             {BONUS_POINTS_LIMIT} points is the limit of
                             getting bonus which gives you {BONUS_POINTS}
-                            points more.</Text>
-                        <Text style={styles.playerName}>Good luck, {playerName}</Text>
+                            points more.
+                        </Text>
+                        <Text style={styles.playerName}>Good luck, {playerName}!</Text>
                         <Pressable
                             onPress={() => navigation.navigate('Gameboard', { player: playerName })}>
                             <Text style={styles.border}>PLAY</Text>
