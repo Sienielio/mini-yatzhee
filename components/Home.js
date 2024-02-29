@@ -5,7 +5,14 @@ import styles from "../style/style";
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons.js';
 import Header from './Header';
 import Footer from './Footer';
-import { NBR_OF_DICES, NBR_OF_THROWS, MIN_SPOT, MAX_SPOT, BONUS_POINTS_LIMIT, BONUS_POINTS } from '../constants/Game';
+import {
+    NBR_OF_DICES,
+    NBR_OF_THROWS,
+    MIN_SPOT,
+    MAX_SPOT,
+    BONUS_POINTS_LIMIT,
+    BONUS_POINTS
+} from '../constants/Game';
 
 export default Home = ({ navigation }) => {
 
@@ -22,21 +29,40 @@ export default Home = ({ navigation }) => {
     return (
         <>
             <Header />
-            <View>
+            <View style={styles.center}>
                 {!hasPlayerName ?
                     <>
+                        <MaterialCommunityIcons
+                            name="account-heart"
+                            size={90}
+                            color="#ff7575"
+                        />
                         <Text>
                             For scoreboard enter your name...
                         </Text>
-                        <TextInput onChangeText={setPlayerName} autoFocus={true} />
-                        <Pressable onPress={() => handlePlayerName(playerName)}>
-                            <Text>OK</Text>
+                        <TextInput
+                            style={styles.input}
+                            onChangeText={setPlayerName}
+                            autoFocus={true} />
+                        <Pressable
+                            onPress={() =>
+                                handlePlayerName(playerName)}>
+                            <Text style={styles.buttonText}>OK</Text>
                         </Pressable>
                     </>
                     :
                     <>
-                        <Text>Rules of the game...</Text>
-                        <Text multiline='true'>
+                        <MaterialCommunityIcons
+                            name="information"
+                            size={90}
+                            color="#ff7575"
+                        />
+                        <Text style={styles.bold}>
+                            Rules of the game:
+                        </Text>
+                        <Text
+                            multiline='true'
+                            style={styles.center}>
                             THE GAME: Upper section of the classic Yahtzee
                             dice game. You have {NBR_OF_DICES} dices and
                             for the every dice you have {NBR_OF_THROWS}
@@ -47,7 +73,10 @@ export default Home = ({ navigation }) => {
                             Game ends when all points have been selected.
                             The order for selecting those is free.
                         </Text>
-                        <Text multiline='true'>POINTS: After each turn game calculates the sum
+                        <Text
+                            multiline='true'
+                            style={styles.center}
+                            >POINTS: After each turn game calculates the sum
                             for the dices you selected. Only the dices having
                             the same spot count are calculated. Inside the
                             game you can not select same points from
@@ -56,10 +85,10 @@ export default Home = ({ navigation }) => {
                             {BONUS_POINTS_LIMIT} points is the limit of
                             getting bonus which gives you {BONUS_POINTS}
                             points more.</Text>
-                        <Text>Good luck, {playerName}</Text>
+                        <Text style={styles.playerName}>Good luck, {playerName}</Text>
                         <Pressable
                             onPress={() => navigation.navigate('Gameboard', { player: playerName })}>
-                            <Text>PLAY</Text>
+                            <Text style={styles.border}>PLAY</Text>
                         </Pressable>
                     </>
                 }
